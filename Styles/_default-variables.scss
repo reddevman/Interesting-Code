@@ -1,0 +1,411 @@
+// Tables
+$border-radius: 10px;
+
+// Font Variables
+$icons_Regular: "Font Awesome Regular";
+$icons_Solid: "Font Awesome Solid";
+$icons_Brands: "Font Awesome Brands";
+$roboto: "Roboto", sans-serif;
+$merri: "Merriweather", serif;
+
+// Font-weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+// Breakpoints
+$xs: 320px;
+$sm: 480px;
+$md: 767px;
+$md2: 900px;
+$lg: 990px;
+$xl: 1200px;
+$xl1: 1325px;
+$xl2: 1440px;
+
+$grid-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  md2: $md2,
+  lg: $lg,
+  xl: $xl,
+  xl2: $xl2,
+) !default;
+
+// Media Queries
+$phone: "only screen and (max-width : #{$sm})";
+$phablet: "only screen and (max-width : #{$md})";
+$tablet: "only screen and (max-width : #{$lg})";
+$medium-laptop: "only screen and (max-width : #{$xl})";
+
+// Components
+$border-radius-pill:          50rem !default;
+
+// Transition Mixing
+@mixin transition($variable) {
+  -webkit-transition: $variable;
+  -moz-transition: $variable;
+  -ms-transition: $variable;
+  -o-transition: $variable;
+  transition: $variable;
+}
+
+// Transform Mixing
+@mixin transform($variable) {
+  -webkit-transform: $variable;
+  -moz-transform: $variable;
+  -ms-transform: $variable;
+  -o-transform: $variable;
+  transform: $variable;
+}
+
+// Translate Mixing
+@mixin translate($v1, $v2) {
+  -webkit-transform: translate($v1, $v2);
+  -moz-transform: translate($v1, $v2);
+  -ms-transform: translate($v1, $v2);
+  -o-transform: translate($v1, $v2);
+  transform: translate($v1, $v2);
+}
+
+// Shadow Mixing
+@mixin shadow($variable) {
+  -webkit-box-shadow: $variable;
+  -moz-box-shadow: $variable;
+  -ms-box-shadow: $variable;
+  -o-box-shadow: $variable;
+  box-shadow: $variable;
+}
+
+@mixin doble-shadow($v1, $v2) {
+  -webkit-box-shadow: $v1, $v2;
+  -moz-box-shadow: $v1, $v2;
+  -ms-box-shadow: $v1, $v2;
+  -o-box-shadow: $v1, $v2;
+  box-shadow: $v1, $v2;
+}
+
+@mixin text-shadow($variable) {
+  -webkit-text-shadow: $variable;
+  -moz-text-shadow: $variable;
+  -ms-text-shadow: $variable;
+  -o-text-shadow: $variable;
+  text-shadow: $variable;
+}
+
+// Animation Mixing
+@mixin animation($variable) {
+  -webkit-animation: $variable;
+  -moz-animation: $variable;
+  -ms-animation: $variable;
+  -o-animation: $variable;
+  animation: $variable;
+}
+
+// Filter Mixing
+@mixin filter($variable) {
+  -webkit-filter: $variable;
+  -moz-filter: $variable;
+  -ms-filter: $variable;
+  -o-filter: $variable;
+  filter: $variable;
+}
+
+// Disable highligh
+@mixin nohighligh {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Display Flex Mixing
+@mixin flexdisplay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// Flex Mixing
+@mixin flex($variable) {
+  -webkit-flex: $variable;
+  -moz-flex: $variable;
+  -ms-flex: $variable;
+  -o-flex: $variable;
+  flex: $variable;
+}
+
+// Flex Order Mixing
+@mixin order($variable) {
+  -webkit-box-ordinal-group: $variable;
+  -moz-box-ordinal-group: $variable;
+  -ms-flex-order: $variable;
+  -webkit-order: $variable;
+  order: $variable;
+}
+
+// Align Items Mixing
+@mixin alignitems($variable) {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// Flex Direction Mixing
+@mixin flexdirection($variable) {
+  -webkit-flex-direction: $variable;
+  -moz-flex-direction: $variable;
+  -ms-flex-direction: $variable;
+  -o-flex-direction: $variable;
+  flex-direction: $variable;
+}
+
+// Filter
+@mixin filter($variable) {
+  -webkit-filter: $variable;
+  -ms-filter: $variable;
+  -moz-filter: $variable;
+  -o-filter: $variable;
+  filter: $variable;
+}
+@mixin cards() {
+  &:hover {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+  }
+  &:active {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.14);
+    background-color: $focus-grey;
+    border-radius: 10px;
+  }
+  &:focus {
+    border: 2px solid $blue;
+    border-radius: 10px;
+  }
+}
+@mixin ghostButtons() {
+  border-bottom: 1px solid $blue;
+  padding: 0 2px;
+  color: $dark-grey;
+  font-family: $merriweather;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
+  &:active {
+    background-color: $focus-grey;
+  }
+  &:focus {
+    border: 2px solid $blue;
+    border-radius: 2px;
+  }
+}
+@mixin secondaryIconButton() {
+  &:hover {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid $dark-blue;
+    border-radius: 2px;
+  }
+  &:active {
+    background-color: $focus-grey;
+    border: 1px solid $dark-blue;
+    border-radius: 2px;
+  }
+  &:focus {
+    border: 2px solid $blue;
+    border-radius: 2px;
+    background-color: $focus-grey;
+  }
+}
+// scroll bar
+@mixin scroll() {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+    position: absolute;
+    background: transparent !important;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: transparent repeat-y !important;
+    scrollbar-width: thin;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(250, 248, 248, 0.5);
+    opacity: 0.6;
+    border-radius: 4px;
+    scrollbar-width: thin;
+  }
+}
+@mixin lightBlueScroll() {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-scrollbar {
+    width: 13px; /* width of the entire scrollbar */
+    height: 13px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $light-grey; /* color of the tracking area */
+    &:horizontal {
+      border-top: 1px solid $blue-border;
+    }
+    &:vertical {
+      border-left: 1px solid $blue-border;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-border; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 2px solid transparent; /* creates padding around scroll thumb */
+    background-clip: content-box;
+    &:horizontal {
+      border-top: 3px solid transparent;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
+    &:vertical {
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 3px solid transparent;
+    }
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: $light-grey;
+  }
+}
+@mixin hiddenScroll() {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+    position: absolute;
+    background: transparent !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    opacity: 0.6;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent !important;
+  }
+}
+
+// scroll bar
+@mixin scrollSubtle() {
+  &::-ms-clear {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+    position: absolute;
+    background: transparent !important;
+  }
+  &::-webkit-scrollbar {
+    // width: 3px;
+    height: 6px;
+    background: transparent repeat-y !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(102, 102, 102, 0.3);
+    opacity: 0.4;
+    border-radius: 4px;
+  }
+}
+
+// Stop selection
+@mixin selection() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// center elements (parent must be position: relative)
+//        ************
+//        *          *
+//        *     x    *
+//        *          *
+//        ************
+@mixin absolute-center($elem-height, $elem-width) {
+  position: absolute;
+  left: 50%;
+  margin-left: -$elem-width/2;
+  top: 50%;
+  margin-top: -$elem-height/2;
+}
+
+//        ************
+//        *          *
+//        * x        *
+//        *          *
+//        ************
+@mixin center-vertically($elem-height) {
+  position: absolute;
+  top: 50%;
+  margin-top: -$elem-height/2;
+}
+
+//        ************
+//        *     x    *
+//        *          *
+//        *          *
+//        ************
+@mixin center-horizontally($elem-width) {
+  position: absolute;
+  left: 50%;
+  margin-left: -$elem-width/2;
+}
+
+// use in a :before or :after
+@mixin arrow($direction, $color, $size) {
+  content: "";
+  width: $size;
+  height: $size;
+  border: 2px solid $color;
+  border-top: 0;
+  border-left: 0;
+  display: block;
+  position: absolute;
+
+  @if $direction==top {
+    transform: rotateZ(-135deg);
+  } @else if $direction==right {
+    transform: rotateZ(-45deg);
+  } @else if $direction==bottom {
+    transform: rotateZ(45deg);
+  } @else if $direction==left {
+    transform: rotateZ(135deg);
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Function for converting a px based values to rem.
+@function rem($size) {
+  @return calc($size / 10px) * 1rem;
+}
